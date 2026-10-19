@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김동영 | 애플리케이션 개발자</title>
+  <meta name="description" content="원전 관련 개발 경력 19년, 애플리케이션 개발자 김동영의 프로필 사이트" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { sans: ['Pretendard', 'system-ui', 'sans-serif'] } } }
+    };
+  </script>
+  <script>
+    // 깜빡임 방지: 렌더 전에 테마 적용
+    try {
+      const t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-sans text-slate-700 antialiased dark:text-slate-300">
+
+  <!-- 헤더 / 네비게이션 -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+    <nav class="mx-auto flex max-w-6xl items-center px-5 py-3" aria-label="주 메뉴">
+      <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-emerald-500 bg-clip-text text-transparent">김동영</a>
+
+      <ul class="hidden items-center gap-1 md:flex ml-auto">
+        <li><a href="#about" class="nav-link">소개</a></li>
+        <li><a href="#skills" class="nav-link">기술</a></li>
+        <li><a href="#projects" class="nav-link">프로젝트</a></li>
+        <li><a href="#contact" class="nav-link">연락처</a></li>
+        <li>
+          <button id="theme-toggle" type="button" aria-label="다크모드 전환" class="ml-2 rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800">
+            <span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-1 md:hidden">
+        <button id="theme-toggle-m" type="button" aria-label="다크모드 전환" class="rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+        </button>
+        <button id="menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu" class="rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+    <ul id="mobile-menu" class="hidden border-t border-slate-200 px-5 pb-3 md:hidden dark:border-slate-800">
+      <li><a href="#about" class="block py-2">소개</a></li>
+      <li><a href="#skills" class="block py-2">기술</a></li>
+      <li><a href="#projects" class="block py-2">프로젝트</a></li>
+      <li><a href="#contact" class="block py-2">연락처</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative overflow-hidden">
+      <div class="pointer-events-none absolute -top-24 left-1/2 h-96 w-[48rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-400/30 via-violet-400/30 to-emerald-400/30 blur-3xl"></div>
+      <div class="relative mx-auto flex max-w-6xl flex-col items-center px-5 py-24 text-center sm:py-32">
+        <div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-violet-600 to-emerald-500 text-4xl font-bold text-white shadow-lg" aria-hidden="true">김</div>
+        <p class="mb-3 text-sm font-semibold tracking-widest text-blue-600 dark:text-blue-400">APPLICATION DEVELOPER</p>
+        <h1 class="text-4xl font-extrabold text-slate-900 sm:text-6xl dark:text-white">
+          안녕하세요, <span class="bg-gradient-to-r from-blue-600 via-violet-600 to-emerald-500 bg-clip-text text-transparent">김동영</span>입니다
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-400">
+          우리기술에서 원전 관련 소프트웨어를 개발해 온 19년 경력의 애플리케이션 개발자입니다.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <a href="#projects" class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow hover:bg-blue-700 transition">프로젝트 보기</a>
+          <a href="#contact" class="rounded-xl border border-violet-300 px-6 py-3 font-semibold text-violet-700 hover:bg-violet-50 transition dark:border-violet-700 dark:text-violet-300 dark:hover:bg-violet-950">연락하기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20">
+      <div class="mx-auto max-w-6xl rounded-2xl bg-white/85 px-5 py-8 backdrop-blur dark:bg-slate-900/60 dark:backdrop-blur">
+      <div class="mx-auto max-w-6xl px-5">
+      <h2 class="section-title">소개</h2>
+      <div class="reveal grid items-center gap-10 md:grid-cols-2">
+        <p class="text-lg leading-8">
+          <strong class="text-slate-900 dark:text-white">우리기술</strong>에서 근무하며 원전 관련 소프트웨어 개발에 19년간 종사해 왔습니다.
+          안정성과 신뢰성이 무엇보다 중요한 환경에서 C, C++, C#을 사용해 견고한 애플리케이션을 설계하고 구현합니다.
+        </p>
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="card"><p class="text-3xl font-extrabold text-blue-600 dark:text-blue-400">19년</p><p class="mt-1 text-sm">개발 경력</p></div>
+          <div class="card"><p class="text-3xl font-extrabold text-violet-600 dark:text-violet-400">원전</p><p class="mt-1 text-sm">전문 분야</p></div>
+          <div class="card"><p class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">3종</p><p class="mt-1 text-sm">주력 언어</p></div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="section-title">기술 스택</h2>
+        <div class="reveal grid gap-6 sm:grid-cols-3">
+          <div class="card border-t-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">C</h3>
+            <p class="mt-2 text-sm">저수준 제어와 높은 신뢰성이 요구되는 시스템 및 임베디드 영역</p>
+          </div>
+          <div class="card border-t-4 border-violet-500">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">C++</h3>
+            <p class="mt-2 text-sm">객체지향 설계 기반의 고성능 애플리케이션과 라이브러리 개발</p>
+          </div>
+          <div class="card border-t-4 border-emerald-500">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">C#</h3>
+            <p class="mt-2 text-sm">.NET 기반 데스크톱 애플리케이션과 운영·감시 도구 개발</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mx-auto max-w-6xl px-5 py-20">
+      <h2 class="section-title">프로젝트</h2>
+      <!-- TODO: 아래 3개 카드는 예시입니다. 실제 프로젝트 내용으로 교체하세요. -->
+      <div class="reveal grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <article class="card group border-t-4 border-blue-500 hover:-translate-y-2 hover:shadow-2xl">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">원전 감시 시스템</h3>
+          <p class="mt-3 text-sm leading-6">설비 상태를 실시간으로 수집·표시하는 감시 애플리케이션 개발 (예시)</p>
+          <div class="mt-4 flex flex-wrap gap-2"><span class="tag-blue">C++</span><span class="tag-blue">실시간</span></div>
+        </article>
+        <article class="card group border-t-4 border-violet-500 hover:-translate-y-2 hover:shadow-2xl">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">운영 지원 도구</h3>
+          <p class="mt-3 text-sm leading-6">운전원 업무를 돕는 데스크톱 도구 및 데이터 조회 화면 개발 (예시)</p>
+          <div class="mt-4 flex flex-wrap gap-2"><span class="tag-violet">C#</span><span class="tag-violet">.NET</span></div>
+        </article>
+        <article class="card group border-t-4 border-emerald-500 hover:-translate-y-2 hover:shadow-2xl">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">통신 인터페이스 모듈</h3>
+          <p class="mt-3 text-sm leading-6">장치 간 데이터 교환을 위한 저수준 통신 모듈 구현 (예시)</p>
+          <div class="mt-4 flex flex-wrap gap-2"><span class="tag-green">C</span><span class="tag-green">통신</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+      <div class="reveal mx-auto max-w-2xl rounded-2xl bg-white/85 px-5 py-8 backdrop-blur text-center dark:bg-slate-900/60 dark:backdrop-blur">
+        <h2 class="section-title">연락처</h2>
+        <p class="mb-8">문의나 협업 제안은 이메일로 편하게 연락 주세요.</p>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="mailto:kdy953@gmail.com" class="rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 font-semibold text-white shadow hover:opacity-90 transition">✉️ kdy953@gmail.com</a>
+          <button id="copy-btn" type="button" class="rounded-xl border border-emerald-400 px-6 py-3 font-semibold text-emerald-700 hover:bg-emerald-50 transition dark:text-emerald-300 dark:hover:bg-emerald-950">이메일 복사</button>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white/80 py-16 text-center text-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+    © 2026 김동영. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
